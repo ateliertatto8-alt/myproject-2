@@ -42,35 +42,39 @@
 
     <!-- Header / Navbar -->
     <header class="bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/80 sticky top-0 z-50 transition-all">
-        <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
-            <a href="javascript:void(0)" onclick="switchPage('home')" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 p-[1px] shadow-lg shadow-amber-500/10">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+            <!-- Logo -->
+            <a href="javascript:void(0)" onclick="switchPage('home')" class="flex items-center gap-2 group shrink-0">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 p-[1px] shadow-lg shadow-amber-500/10">
                     <div class="w-full h-full bg-zinc-950 rounded-full flex items-center justify-center">
-                        <span class="text-amber-500 font-bold text-lg group-hover:scale-110 transition">71</span>
+                        <span class="text-amber-500 font-bold text-xs group-hover:scale-110 transition">71</span>
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-bold tracking-wider text-zinc-100 group-hover:text-amber-500 transition">71's Atelier Tattoo</span>
-                    <span class="text-[10px] text-zinc-400 tracking-widest uppercase -mt-1">Tattoo Studio & Custom Design</span>
+                    <span class="text-sm font-bold tracking-wider text-zinc-100 group-hover:text-amber-500 transition">71's Atelier Tattoo</span>
                 </div>
             </a>
-            
-            <nav class="hidden md:flex items-center gap-1 bg-zinc-900/60 p-1.5 rounded-full border border-zinc-800/60 text-sm">
-                <button onclick="switchPage('home')" id="nav-home" class="nav-btn px-4 py-1.5 rounded-full text-amber-400 font-medium bg-zinc-800/80 shadow-sm transition">หน้าแรก</button>
-                <button onclick="switchPage('about')" id="nav-about" class="nav-btn px-4 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition">เกี่ยวกับร้าน</button>
-                <button onclick="switchPage('gallery')" id="nav-gallery" class="nav-btn px-4 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition">ผลงานสัก</button>
-                <button onclick="switchPage('booking')" id="nav-booking" class="nav-btn px-4 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition">ประเมินราคา/จองคิว</button>
-                <button onclick="switchPage('contact')" id="nav-contact" class="nav-btn px-4 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition">ติดต่อเรา</button>
+
+            <!-- Navigation Links (รองรับการปัดซ้าย-ขวาบนมือถือ) -->
+            <nav class="flex items-center gap-1 bg-zinc-900/80 p-1 rounded-full border border-zinc-800/80 text-xs overflow-x-auto max-w-[65vw] sm:max-w-none shrink-0 scrollbar-none">
+                <button onclick="switchPage('home')" id="nav-home" class="nav-btn px-3 py-1.5 rounded-full text-amber-400 font-medium bg-zinc-800/80 shadow-sm transition whitespace-nowrap shrink-0">หน้าแรก</button>
+                <button onclick="switchPage('about')" id="nav-about" class="nav-btn px-3 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition whitespace-nowrap shrink-0">เกี่ยวกับร้าน</button>
+                <button onclick="switchPage('gallery')" id="nav-gallery" class="nav-btn px-3 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition whitespace-nowrap shrink-0">ผลงานสัก</button>
+                <button onclick="switchPage('services')" id="nav-services" class="nav-btn px-3 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition whitespace-nowrap">บริการ & ราคา</button>
+                <button onclick="switchPage('aftercare')" id="nav-aftercare" class="nav-btn px-3 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition whitespace-nowrap">ข้อปฏิบัติก่อนสัก</button>
+                <button onclick="switchPage('booking')" id="nav-booking" class="nav-btn px-3 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition whitespace-nowrap shrink-0">จองคิว</button>
+                <button onclick="switchPage('contact')" id="nav-contact" class="nav-btn px-3 py-1.5 rounded-full text-zinc-400 hover:text-zinc-100 transition whitespace-nowrap shrink-0">ติดต่อเรา</button>
             </nav>
 
-            <button onclick="switchPage('booking')" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold rounded-full group bg-gradient-to-br from-amber-500 to-amber-700 group-hover:from-amber-500 group-hover:to-amber-600 text-zinc-950 shadow-lg shadow-amber-500/20">
-                <span class="px-4 py-2 bg-amber-500 rounded-full group-hover:bg-opacity-0 transition duration-300 font-bold flex items-center gap-1.5">
-                    <i data-lucide="calendar" class="w-4 h-4"></i> จองคิวทันที
+            <!-- Action Button (แสดงเฉพาะจอคอม) -->
+            <button onclick="switchPage('booking')" class="relative hidden md:inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-semibold rounded-full group bg-gradient-to-br from-amber-500 to-amber-700 shrink-0">
+                <span class="px-3.5 py-1.5 bg-amber-500 rounded-full group-hover:bg-opacity-0 transition duration-300 font-bold flex items-center gap-1 text-zinc-950">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> จองคิว
                 </span>
             </button>
         </div>
     </header>
-
+    
     <!-- Main Content -->
     <main class="flex-1">
 
@@ -102,39 +106,248 @@
                 </div>
             </div>
 
-            <!-- Features Highlights -->
-            <div class="max-w-6xl mx-auto px-4 py-16 grid sm:grid-cols-3 gap-6">
-                <div class="bg-zinc-900/50 border border-zinc-800/80 p-6 rounded-2xl space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                        <i data-lucide="shield-check" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-zinc-100">สะอาด ปลอดภัย 100%</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">แกะเข็มใหม่ต่อหน้า อุปกรณ์ผ่านการฆ่าเชื้อโรคระดับมาตรฐาน เปลี่ยนวัสดุสิ้นเปลืองทุกเคส</p>
-                </div>
-                <div class="bg-zinc-900/50 border border-zinc-800/80 p-6 rounded-2xl space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                        <i data-lucide="pen-tool" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-zinc-100">Custom Design เฉพาะคุณ</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">รับวางแบบ ออกแบบใหม่ตามความต้องการ คุยรายละเอียดและปรับแต่งจนกว่าจะพอใจก่อนสักจริง</p>
-                </div>
-                <div class="bg-zinc-900/50 border border-zinc-800/80 p-6 rounded-2xl space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                        <i data-lucide="sparkles" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-zinc-100">ช่างมือเบา ประณีต</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">เน้นงานเส้นคม ชัด บางเบา รอยแผลหายไว ดูแลให้คำแนะนำทั้งก่อนและหลังการสักอย่างใกล้ชิด</p>
-                </div>
-            </div>
-        </section>
+            <!-- Features Highlights (5 Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+    
+    <!-- การ์ดที่ 1: สะอาด ปลอดภัย 100% -->
+    <div class="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col justify-between">
+        <div class="relative rounded-xl overflow-hidden mb-4 bg-zinc-950 aspect-[3/4]">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/docs/snaptik_7670553327314160904_v3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="space-y-2">
+            <h3 class="text-sm font-bold text-zinc-100">สะอาด ปลอดภัย 100%</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">
+                แกะเข็มใหม่ต่อหน้า อุปกรณ์ผ่านการฆ่าเชื้อด้วยเครื่องมาตรฐาน เปลี่ยนวัสดุสิ้นเปลืองทุกเคส
+            </p>
+        </div>
+    </div>
 
-        <!-- 2. ABOUT SECTION -->
+    <!-- การ์ดที่ 2: Custom Design เฉพาะคุณ -->
+    <div class="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col justify-between">
+        <div class="relative rounded-xl overflow-hidden mb-4 bg-zinc-950 aspect-[3/4]">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/docs/snaptik_7456813160306216210_v3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="space-y-2">
+            <h3 class="text-sm font-bold text-zinc-100">Custom Design เฉพาะคุณ</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">
+                รับวางแบบ ออกแบบใหม่ตามความต้องการ คุยรายละเอียดและปรับแก้จนกว่าจะพอใจก่อนสักจริง
+            </p>
+        </div>
+    </div>
+
+    <!-- การ์ดที่ 3: ช่างมือเบา ประณีต -->
+    <div class="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col justify-between">
+        <div class="relative rounded-xl overflow-hidden mb-4 bg-zinc-950 aspect-[3/4]">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/docs/snaptik_7531778208157420808_v3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="space-y-2">
+            <h3 class="text-sm font-bold text-zinc-100">ช่างมือเบา ประณีต</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">
+                เน้นงานเส้นคม ชัด บางเบา รอยแผลหายไว ดูแลให้คำแนะนำทั้งก่อนและหลังการสักอย่างใกล้ชิด
+            </p>
+        </div>
+    </div>
+
+    <!-- การ์ดที่ 4: สีสักมาตรฐานนำเข้า -->
+    <div class="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col justify-between">
+        <div class="relative rounded-xl overflow-hidden mb-4 bg-zinc-950 aspect-[3/4]">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/docs/snaptik_7513921533174238472_v3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="space-y-2">
+            <h3 class="text-sm font-bold text-zinc-100">สีสักมาตรฐานนำเข้า</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">
+                ใช้สีสักคุณภาพสูง สีติดดี ปลอดภัยต่อผิวหนัง ลายสักสวยงามคงทนระยะยาว
+            </p>
+        </div>
+    </div>
+
+    <!-- การ์ดที่ 5: บรรยากาศเป็นกันเอง -->
+    <div class="bg-zinc-900/60 border border-zinc-800/80 p-4 rounded-2xl flex flex-col justify-between">
+        <div class="relative rounded-xl overflow-hidden mb-4 bg-zinc-950 aspect-[3/4]">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/docs/snaptik_7674486113083477256_v3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="space-y-2">
+            <h3 class="text-sm font-bold text-zinc-100">บรรยากาศเป็นกันเอง</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">
+                สตูดิโอสะอาด เป็นส่วนตัว ไม่วุ่นวาย มีที่จอดรถสะดวกสบาย ให้คุณผ่อนคลายตลอดการรับบริการ
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+    <!-- 2. โซนความประทับใจจากลูกค้า + ฟอร์มคอมเมนต์ (พร้อมระบบแนบรูปภาพ) -->
+<div class="max-w-6xl mx-auto px-4 pb-16 space-y-8 border-t border-zinc-800/60 pt-12">
+    <!-- หัวข้อส่วนรีวิว -->
+    <div class="text-center space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-black text-zinc-100 tracking-tight">ความประทับใจจากลูกค้า</h2>
+        <p class="text-xs sm:text-sm text-amber-500 font-medium">ส่วนหนึ่งของรีวิวจากผู้รับบริการจริง</p>
+    </div>
+
+    <!-- ฟอร์มสำหรับพิมพ์คอมเมนต์ และแนบรูป -->
+    <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 max-w-xl mx-auto space-y-4 shadow-lg">
+        <h3 class="text-sm font-bold text-zinc-200 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span> เขียนรีวิว / แสดงความคิดเห็น
+        </h3>
+        
+        <form id="commentForm" onsubmit="addComment(event)" class="space-y-3">
+            <div>
+                <input type="text" id="commenterName" placeholder="ชื่อของคุณ (เช่น คุณเอ, Customer)" required 
+                    class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-zinc-200 focus:outline-none focus:border-amber-500 transition">
+            </div>
+            <div>
+                <textarea id="commentText" rows="3" placeholder="แบ่งปันความประทับใจจากการใช้บริการ..." required 
+                    class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs text-zinc-200 focus:outline-none focus:border-amber-500 transition resize-none"></textarea>
+            </div>
+            
+            <!-- ปุ่ม/ช่องแนบรูปภาพ -->
+            <div>
+                <label class="block text-xs text-zinc-400 mb-1">แนบรูปภาพผลงาน/รีวิว (ถ้ามี):</label>
+                <input type="file" id="commentImage" accept="image/*" 
+                    class="w-full text-xs text-zinc-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-zinc-800 file:text-amber-400 hover:file:bg-zinc-700 cursor-pointer border border-zinc-800/80 rounded-xl bg-zinc-950 p-1">
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold py-2.5 rounded-xl text-xs transition shadow-md cursor-pointer">
+                ส่งความคิดเห็น
+            </button>
+        </form>
+    </div>
+
+    <!-- รายการการ์ดรีวิว -->
+    <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- รีวิวเดิม 1 -->
+        <div class="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-3">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">"ช่างมือเบามาก งานเส้นบางคมกริบตรงตาม Ref ที่ส่งให้ ร้านสะอาด เป็นส่วนตัวมากครับ"</p>
+            </div>
+            <span class="text-[11px] text-zinc-500 font-medium">โดย คุณลูกค้า</span>
+        </div>
+
+        <!-- รีวิวเดิม 2 -->
+        <div class="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-3">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">"สักครั้งแรกแอบกลัวเจ็บ แต่ช่างให้คำปรึกษาดีมาก ใจเย็น แผลแห้งไวมากค่ะ เลิฟเลย!"</p>
+            </div>
+            <span class="text-[11px] text-zinc-500 font-medium">โดย คุณลูกค้า</span>
+        </div>
+
+        <!-- รีวิวเดิม 3 -->
+        <div class="bg-zinc-900/80 border border-zinc-800/80 rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-3">
+                <div class="flex items-center gap-1 text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">"ออกแบบ Custom ออกมาได้ถูกใจมากครับ แก้แบบให้จนกว่าจะชอบแนะนำเลยครับร้านนี้"</p>
+            </div>
+            <span class="text-[11px] text-zinc-500 font-medium">โดย คุณลูกค้า</span>
+        </div>
+    </div>
+</div>
+
+<!-- Script จัดการการส่งรูปภาพ + คอมเมนต์ -->
+<script>
+    async function addComment(event) {
+        event.preventDefault();
+        const nameInput = document.getElementById('commenterName');
+        const textInput = document.getElementById('commentText');
+        const imageInput = document.getElementById('commentImage');
+
+        const name = nameInput.value.trim();
+        const text = textInput.value.trim();
+        const file = imageInput.files[0];
+
+        if (!name || !text) return;
+
+        let imageDataUrl = '';
+        if (file) {
+            imageDataUrl = await convertFileToBase64(file);
+        }
+
+        const newReview = { name, text, image: imageDataUrl };
+        const savedReviews = JSON.parse(localStorage.getItem('user_reviews') || '[]');
+        savedReviews.unshift(newReview);
+        localStorage.setItem('user_reviews', JSON.stringify(savedReviews));
+
+        renderReviewCard(newReview, true);
+
+        nameInput.value = '';
+        textInput.value = '';
+        imageInput.value = '';
+    }
+
+    // ฟังก์ชันแปลงไฟล์รูปภาพเป็น Base64
+    function convertFileToBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    }
+
+    function renderReviewCard(review, isNew = false) {
+        const grid = document.getElementById('reviewsGrid');
+        if (!grid) return;
+
+        const card = document.createElement('div');
+        card.className = "bg-zinc-900/80 border border-amber-500/40 rounded-2xl p-6 space-y-4 flex flex-col justify-between";
+        
+        // เช็กว่ามีรูปภาพแนบมาด้วยหรือไม่
+        const imageHtml = review.image ? `
+            <div class="w-full h-48 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 mt-2">
+                <img src="${review.image}" alt="รูปภาพรีวิว" class="w-full h-full object-cover">
+            </div>
+        ` : '';
+
+        card.innerHTML = `
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1 text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                    ${isNew ? '<span class="text-[10px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-semibold">ใหม่ล่าสุด</span>' : ''}
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">"${escapeHtml(review.text)}"</p>
+                ${imageHtml}
+            </div>
+            <span class="text-[11px] text-amber-400/90 font-medium">โดย ${escapeHtml(review.name)}</span>
+        `;
+
+        grid.prepend(card);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedReviews = JSON.parse(localStorage.getItem('user_reviews') || '[]');
+        savedReviews.reverse().forEach(review => renderReviewCard(review));
+    });
+
+    function escapeHtml(text) {
+        return text.replace(/[&<>"']/g, function(m) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+    }
+</script>
+            </section>
+            <!-- 2. ABOUT SECTION -->
         <section id="page-about" class="page-section max-w-5xl mx-auto px-4 py-12">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-extrabold text-zinc-100">เกี่ยวกับเรา</h2>
                 <p class="text-amber-500 text-sm font-medium mt-1">71’s Atelier Tattoo Studio</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 items-center bg-zinc-900/60 border border-zinc-800/80 p-6 md:p-8 rounded-2xl">
+            
+            <!-- ข้อมูลร้าน -->
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-zinc-900/60 border border-zinc-800/80 p-6 md:p-8 rounded-2xl mb-12">
                 <div class="space-y-4">
                     <span class="text-xs font-bold uppercase tracking-widest text-amber-500">Private Tattoo Studio</span>
                     <h3 class="text-2xl font-bold text-zinc-100">ร้านสักบรรยากาศเป็นกันเอง ย่านคลองหก ปทุมธานี</h3>
@@ -149,66 +362,316 @@
                 </div>
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-amber-700 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
-                    <img src="assets/images/IMG_7340.JPG" alt="บรรยากาศร้านสัก" class="relative rounded-xl border border-zinc-800 w-full h-80 object-cover">
+                    <img src="assets/images/CA00C782-7140-4044-9D04-32867D000041.jpg" alt="โลโก้ร้านสัก 71's Atelier Tattoo" class="relative rounded-xl border border-zinc-800 w-full h-80 object-cover">
                 </div>
             </div>
-        </section>
 
+            <!-- โซนบรรยากาศภายในร้าน (9 รูป) อยู่ในเซกชัน "เกี่ยวกับเรา" -->
+<div class="space-y-6">
+    <div class="text-center md:text-left">
+        <h3 class="text-xl font-bold text-zinc-100">บรรยากาศภายในร้าน</h3>
+        <p class="text-xs text-zinc-400 mt-1">สตูดิโอสะอาด เป็นส่วนตัว โปร่งสบาย เพื่อความผ่อนคลายระหว่างรับบริการ</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <!-- รูปที่ 1 -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/7DEF1956-93B3-4804-9D84-CA9C358C3F6E.jpg" alt="บรรยากาศร้าน 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 2 -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/2AC4AB2F-C660-46E5-A15D-F698DF9EB619.jpg" alt="บรรยากาศร้าน 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 3 -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/0D358253-7774-49ED-BC62-519D377189B7.jpg" alt="บรรยากาศร้าน 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 4 -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/22903DEE-A35F-4D99-B955-EBAE06805271.jpg" alt="บรรยากาศร้าน 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 5 -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/BC1B2AD9-1244-4E23-9B19-11C426B86AC1.jpg" alt="บรรยากาศร้าน 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 6 -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/FE2E748F-92DF-49B7-A5D2-CEA8C82AAF4C.jpg" alt="บรรยากาศร้าน 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 7 (เพิ่มใหม่) -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/IMG_7657.JPG" alt="บรรยากาศร้าน 7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 8 (เพิ่มใหม่) -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/IMG_7673.JPG" alt="บรรยากาศร้าน 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <!-- รูปที่ 9 (เพิ่มใหม่) -->
+        <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
+            <img src="assets/images/YOUR_IMAGE_9.jpg" alt="บรรยากาศร้าน 9" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+    </div>
+</div>
+        </section>
+        </section>
         <!-- 3. GALLERY SECTION -->
-        <section id="page-gallery" class="page-section max-w-6xl mx-auto px-4 py-12">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-zinc-100">ผลงานที่ผ่านมา</h2>
-                <p class="text-zinc-400 text-sm mt-1">ตัวอย่างลายสัก Custom Design & Fine Line จาก 71's Atelier Tattoo</p>
+        <section id="page-gallery" class="page-section hidden py-12 px-4 max-w-5xl mx-auto w-full">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-extrabold text-[#2B3A33]">ผลงานที่ผ่านมา</h2>
+        <p class="text-[#2B3A33]/70 text-sm mt-1">ตัวอย่างลายสัก Custom Design & Fine Line จาก 71's Atelier Tattoo</p>
+    </div>
+
+    <!-- Grid แสดง 30 รูปใหญ่ (2 คอลัมน์บนมือถือ / 3 คอลัมน์บนจอคอม) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-10">
+        
+        <!-- รูปที่ 1 - 6 (รูปเดิม) -->
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/557577857_122173109930479231_5603401575463416162_n.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/759796439_122205102818479231_1867165320724813719_n.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/475950665_122136549020479231_4971176248148138710_n.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/791405850_122209658210479231_8113766094055156268_n.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/786819656_122208298658479231_8982086982805695594_n.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/469351999_122127764540479231_8101365697689435336_n.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+
+        <!-- รูปที่ 7 - 30 (เปลี่ยนชื่อไฟล์รูปใน src="assets/images/..." ตามไฟล์จริงของคุณได้เลย) -->
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7653.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7656.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7672.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7671.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7670.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7669.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7668.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7667.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7666.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7665.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7664.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7663.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7662.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7661.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7660.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7659.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7658.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7680.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7677.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7678.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7652.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7650.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7649.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-[#C0E1D2] bg-white shadow-sm">
+            <img src="assets/images/IMG_7679.JPG" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+        </div>
+
+    </div>
+            </section>
+ <!-- 4. SERVICES & PRICING SECTION (เมนูใหม่) -->
+        <section id="page-services" class="page-section max-w-5xl mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-zinc-100">บริการ & อัตราค่าบริการ</h2>
+                <p class="text-amber-500 text-sm font-medium mt-1">บริการงานสักหลากหลายประเภท ออกแบบประณีตตามต้องการ</p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 mb-10">
-                <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-                    <img src="assets/images/557577857_122173109930479231_5603401575463416162_n.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-100">Minimal & Fine Line</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">งานสักเส้นบางเบา มินิมอล เรียบหรู เหมาะสำหรับผู้ที่ชอบงานสไตล์สะอาดตา</p>
+                    <div class="pt-2 border-t border-zinc-800 text-amber-400 font-bold text-sm">เริ่มต้น 500 บาท</div>
                 </div>
-                <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-                    <img src="assets/images/759796439_122205102818479231_1867165320724813719_n.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-                    <img src="assets/images/475950665_122136549020479231_4971176248148138710_n.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-                    <img src="assets/images/791405850_122209658210479231_8113766094055156268_n.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-                    <img src="assets/images/786819656_122208298658479231_8982086982805695594_n.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="group relative aspect-square overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
-                    <img src="assets/images/469351999_122127764540479231_8101365697689435336_n.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-            </div>
 
-            <div class="text-center">
-                <a href="https://www.facebook.com/people/71s-Atelier-Tattoo/61564376957038/" target="_blank" class="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 px-6 py-3 rounded-xl transition text-sm font-medium">
-                    <i data-lucide="facebook" class="w-4 h-4 text-blue-500"></i> ติดตามและดูผลงานอัปเดตบน Facebook Page
-                </a>
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="type" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-100">Font & Lettering</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">งานตัวหนังสือ ข้อความ ตัวเลข หรือลายเซ็น มีแบบฟอนต์ให้เลือกหลากหลาย</p>
+                    <div class="pt-2 border-t border-zinc-800 text-amber-400 font-bold text-sm">เริ่มต้น 500 บาท</div>
+                </div>
+
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-100">Custom Design</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">งานออกแบบใหม่เฉพาะบุคคล รังสรรค์ตามเรื่องราวและความต้องการของคุณ</p>
+                    <div class="pt-2 border-t border-zinc-800 text-amber-400 font-bold text-sm">เริ่มต้น 1,000 บาท</div>
+                </div>
+
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="palette" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-100">Color Tattoo</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">งานสักลงสี สีติดชัด คุณภาพสูง นำเข้าจากต่างประเทศ สดใสคงทน</p>
+                    <div class="pt-2 border-t border-zinc-800 text-amber-400 font-bold text-sm">เริ่มต้น 1,200 บาท</div>
+                </div>
+
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-100">Cover-Up / งานแก้</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">บริการทับรอยสักเดิม หรือปรับแต่งลายเก่าให้สวยงามและดูทันสมัยยิ่งขึ้น</p>
+                    <div class="pt-2 border-t border-zinc-800 text-amber-400 font-bold text-sm">ประเมินตามเคส</div>
+                </div>
+
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3">
+                            <i data-lucide="help-circle" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-100">ประเมินราคาฟรี</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">ส่งลาย Ref หรือขนาดที่ต้องการมาให้ช่างประเมินราคาได้ก่อนตัดสินใจ</p>
+                    </div>
+                    <button onclick="switchPage('booking')" class="w-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold py-2 rounded-lg text-xs transition">ประเมินราคาเลย</button>
+                </div>
             </div>
         </section>
+<!-- 4. AFTERCARE & PROCESS SECTION (เมนูใหม่) -->
+        <section id="page-aftercare" class="page-section max-w-4xl mx-auto px-4 py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-zinc-100">ขั้นตอน & การดูแลรักษารอยสัก</h2>
+                <p class="text-amber-500 text-sm font-medium mt-1">ข้อแนะนำสำคัญก่อนและหลังเข้ารับบริการสัก</p>
+            </div>
 
-        <!-- 4. BOOKING & ESTIMATOR SECTION -->
+            <div class="space-y-8">
+                <!-- ขั้นตอนการรับบริการ -->
+                <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-4">
+                    <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+                        <i data-lucide="list-checks" class="w-5 h-5"></i> ขั้นตอนการเข้ารับบริการ
+                    </h3>
+                    <div class="grid sm:grid-cols-4 gap-4 text-xs">
+                        <div class="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-1">
+                            <span class="text-amber-500 font-bold">01. ปรึกษาแบบ</span>
+                            <p class="text-zinc-400">ส่งรูป Ref ขนาด และตำแหน่งที่ต้องการทาง LINE</p>
+                        </div>
+                        <div class="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-1">
+                            <span class="text-amber-500 font-bold">02. มัดจำ & จองคิว</span>
+                            <p class="text-zinc-400">มัดจำเพื่อล็อคคิว และเริ่มขั้นตอนการออกแบบ</p>
+                        </div>
+                        <div class="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-1">
+                            <span class="text-amber-500 font-bold">03. สรุปแบบจริง</span>
+                            <p class="text-zinc-400">ปรับแต่งแบบจนกว่าจะพอใจก่อนวันสักจริง</p>
+                        </div>
+                        <div class="p-3 bg-zinc-950 rounded-xl border border-zinc-800/80 space-y-1">
+                            <span class="text-amber-500 font-bold">04. เข้าบริการ</span>
+                            <p class="text-zinc-400">เข้าสักที่สตูดิโอตามวันเวลาที่นัดหมาย</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- การเตรียมตัวก่อนสัก & การดูแลหลังสัก -->
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                        <h3 class="text-base font-bold text-zinc-100 flex items-center gap-2">
+                            <i data-lucide="user-check" class="w-4 h-4 text-amber-400"></i> การเตรียมตัวก่อนมาสัก
+                        </h3>
+                        <ul class="text-xs text-zinc-400 space-y-2 list-disc list-inside leading-relaxed">
+                            <li>พักผ่อนให้เพียงพออย่างน้อย 6-8 ชั่วโมง</li>
+                            <li>งดเครื่องดื่มแอลกอฮอล์ก่อนมาสักอย่างน้อย 24 ชม.</li>
+                            <li>รับประทานอาหารให้อิ่มก่อนเริ่มงานสัก</li>
+                            <li>สวมเสื้อผ้าที่สบาย สะดวกต่อการสักตำแหน่งนั้นๆ</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-zinc-900/60 border border-zinc-800 p-6 rounded-2xl space-y-3">
+                        <h3 class="text-base font-bold text-zinc-100 flex items-center gap-2">
+                            <i data-lucide="heart-pulse" class="w-4 h-4 text-amber-400"></i> การดูแลรักษาหลังสัก
+                        </h3>
+                        <ul class="text-xs text-zinc-400 space-y-2 list-disc list-inside leading-relaxed">
+                            <li>ปิดแผ่นฟิล์มหรือพลาสติกตามเวลาที่ช่างแนะนำ</li>
+                            <li>งดว่ายน้ำ ดำน้ำ และเล่นกีฬาที่เหงื่อออกมาก 1-2 สัปดาห์</li>
+                            <li>ห้ามเกา แคะ หรือแกะสะเก็ดแผลเด็ดขาด</li>
+                            <li>ทายาบำรุงรอยสักบางๆ วันละ 1-2 ครั้ง</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- ปุ่มลิงก์ไปยัง Facebook Page -->
+    <div class="text-center">
+        <a href="https://www.facebook.com/people/71s-Atelier-Tattoo/61564376957038/" target="_blank" class="inline-flex items-center gap-2 bg-[#E5EEE4] hover:bg-[#C0E1D2]/50 border border-[#C0E1D2] text-[#2B3A33] font-medium text-xs px-5 py-2.5 rounded-full transition shadow-sm">
+            <i data-lucide="facebook" class="w-4 h-4 text-blue-600"></i> ติดตามและดูผลงานอัปเดตบน Facebook Page
+        </a>
+    </div>
+</section>
+        <!-- 6. BOOKING & ESTIMATOR SECTION -->
         <section id="page-booking" class="page-section max-w-4xl mx-auto px-4 py-12">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-zinc-100">ประเมินราคา & จองคิวสัก</h2>
-                <p class="text-zinc-400 text-sm mt-1">คำนวณราคาประเมินเบื้องต้น และส่งข้อมูลตรงเข้า LINE Official เพื่อยืนยันคิว</p>
+                <h2 class="text-3xl font-extrabold text-zinc-100">จองคิวสัก</h2>
+                <p class="text-zinc-400 text-sm mt-1">กรอกข้อมูลและส่งรายละเอียดตรงเข้า LINE Official เพื่อยืนยันคิว</p>
             </div>
 
             <div class="grid md:grid-cols-5 gap-8">
-                <!-- Interactive Calculator & Form -->
+                <!-- Interactive Form -->
                 <form id="bookingForm" class="md:col-span-5 bg-zinc-900/80 border border-zinc-800 p-6 md:p-8 rounded-2xl space-y-6">
                     
-                    <!-- Step 1: คำนวณราคาเบื้องต้น -->
+                    <!-- รายละเอียดลายสัก -->
                     <div class="bg-zinc-950/80 border border-zinc-800/80 p-5 rounded-xl space-y-4">
                         <div class="flex items-center gap-2 text-amber-500 font-bold text-sm">
-                            <i data-lucide="calculator" class="w-4 h-4"></i> Step 1: ประเมินราคาเบื้องต้น
+                            <i data-lucide="pen-tool" class="w-4 h-4"></i> รายละเอียดลายสัก
                         </div>
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-medium text-zinc-400 mb-1">สไตล์งานสัก</label>
-                                <select id="styleSelect" onchange="calculatePrice()" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:border-amber-500">
+                                <select id="styleSelect" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:border-amber-500">
                                     <option value="minimal">Minimal / Fine Line (งานเส้นบาง)</option>
                                     <option value="font">Font / ตัวหนังสือ</option>
                                     <option value="custom">Custom Design / ออกแบบใหม่</option>
@@ -217,119 +680,179 @@
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-zinc-400 mb-1">ขนาดโดยประมาณ (เซนติเมตร)</label>
-                                <input type="number" id="sizeInput" min="2" max="50" value="5" oninput="calculatePrice()" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:border-amber-500" placeholder="เช่น 5 ซม.">
+                                <input type="number" id="sizeInput" min="2" max="50" value="5" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-200 focus:outline-none focus:border-amber-500" placeholder="เช่น 5 ซม.">
                             </div>
                         </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-zinc-800">
-                            <span class="text-xs text-zinc-400">ราคาประเมินเบื้องต้น:</span>
-                            <span id="estimatedPrice" class="text-xl font-extrabold text-amber-400">฿500 - ฿800</span>
-                        </div>
-                        <p class="text-[11px] text-zinc-500">*ราคาจริงขึ้นอยู่กับความยากง่ายของแบบและตำแหน่งร่างกาย</p>
                     </div>
-
                     <!-- Step 2: ข้อมูลผู้จอง -->
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-2 text-amber-500 font-bold text-sm">
-                            <i data-lucide="user-check" class="w-4 h-4"></i> Step 2: กรอกข้อมูลจองคิว
-                        </div>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-zinc-300 mb-1">ชื่อ - นามสกุล / ชื่อเล่น *</label>
-                                <input type="text" id="name" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 focus:outline-none focus:border-amber-500" placeholder="เช่น กาย">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-zinc-300 mb-1">เบอร์โทรศัพท์ *</label>
-                                <input type="tel" id="phone" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 focus:outline-none focus:border-amber-500" placeholder="08X-XXX-XXXX">
-                            </div>
-                        </div>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-zinc-300 mb-1">วันที่ต้องการเข้าสัก *</label>
-                                <input type="date" id="date" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 focus:outline-none focus:border-amber-500">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-zinc-300 mb-1">ตำแหน่งบนร่างกาย *</label>
-                                <input type="text" id="bodyPart" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 focus:outline-none focus:border-amber-500" placeholder="เช่น แขนท่อนล่าง, ท้องแขน, ข้อเท้า">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-zinc-300 mb-1">รายละเอียดลายสัก / แนบลิงก์รูปตัวอย่าง Ref</label>
-                            <textarea id="detail" rows="3" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-2.5 text-sm text-zinc-100 focus:outline-none focus:border-amber-500" placeholder="อธิบายลายที่ต้องการ หรือวางลิงก์รูป Ref ตัวอย่าง"></textarea>
-                        </div>
-                    </div>
+                    <!-- Step 2: กรอกข้อมูลจองคิว -->
+<div class="space-y-4">
+    <div class="flex items-center gap-2 text-amber-500 font-bold text-sm">
+        <i data-lucide="user-check" class="w-4 h-4"></i> Step 2: กรอกข้อมูลจองคิว
+    </div>
 
-                    <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 text-base">
-                        <i data-lucide="send" class="w-5 h-5"></i> ส่งข้อมูลจองคิวทาง LINE Official
-                    </button>
+    <!-- แถวที่ 1: ชื่อ และ เบอร์โทรศัพท์ -->
+    <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">ชื่อ - นามสกุล / ชื่อเล่น *</label>
+            <!-- แก้ไข input ตรงนี้ -->
+            <input type="text" id="name" required class="w-full bg-white border border-zinc-300 rounded-lg px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="เช่น กาย">
+        </div>
+        <div>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">เบอร์โทรศัพท์ *</label>
+            <!-- แก้ไข input ตรงนี้ -->
+            <input type="tel" id="phone" required class="w-full bg-white border border-zinc-300 rounded-lg px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="08X-XXX-XXXX">
+        </div>
+    </div>
+
+    <!-- แถวที่ 2: วันที่ และ เวลานัดคิว -->
+    <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">วันที่ต้องการเข้าสัก *</label>
+            <!-- แก้ไข input ตรงนี้ -->
+            <input type="date" id="date" required class="w-full bg-white border border-zinc-300 rounded-lg px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+        <div>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">เวลานัดคิว *</label>
+            <!-- แก้ไข input ตรงนี้ -->
+            <input type="text" id="timeSlot" required class="w-full bg-white border border-zinc-300 rounded-lg px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="เช่น 13:00 น.">
+        </div>
+    </div>
+
+    <!-- แถวที่ 3: รายละเอียดลายสัก -->
+    <div>
+        <label class="block text-xs font-medium text-zinc-300 mb-1">รายละเอียดลายสัก / แนบลิงก์รูปตัวอย่าง Ref</label>
+        <!-- แก้ไข textarea ตรงนี้ -->
+        <textarea id="detail" rows="3" class="w-full bg-white border border-zinc-300 rounded-lg px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="อธิบายลายที่ต้องการ หรือวางลิงก์รูป Ref ตัวอย่าง"></textarea>
+    </div>
+
+    <!-- ปุ่มส่งข้อมูล -->
+    <button type="button" onclick="sendToLine()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2">
+        <i data-lucide="send" class="w-5 h-5"></i> ส่งข้อมูลจองคิวทาง LINE Official
+    </button>
+</div>
                 </form>
             </div>
         </section>
+<script>
+function sendToLine() {
+    // ดึงข้อมูลจาก id ในหน้าเว็บของคุณ
+    const fullname = document.getElementById('name')?.value;
+    const phone = document.getElementById('phone')?.value;
+    const date = document.getElementById('date')?.value;
+    const position = document.getElementById('bodyPart')?.value;
+    const details = document.getElementById('detail')?.value || 'ไม่มีข้อมูลเพิ่มเติม';
 
+    // ตรวจสอบข้อมูลที่จำเป็น
+    if (!fullname || !phone || !date || !position) {
+        alert('กรุณากรอกข้อมูลที่มีเครื่องหมาย * ให้ครบถ้วน');
+        return;
+    }
+
+    // จัดข้อความส่งเข้า LINE
+    const message = `📌 *รายละเอียดการจองคิวสัก (71's Atelier)*\n` +
+                    `--------------------------------\n` +
+                    `👤 *ชื่อ-นามสกุล/ชื่อเล่น:* ${fullname}\n` +
+                    `📞 *เบอร์โทรศัพท์:* ${phone}\n` +
+                    `📅 *วันที่ต้องการเข้าสัก:* ${date}\n` +
+                    `📍 *ตำแหน่งบนร่างกาย:* ${position}\n` +
+                    `📝 *รายละเอียด/Ref:* ${details}\n` +
+                    `--------------------------------\n` +
+                    `ส่งข้อมูลจากเว็บไซต์ 71's Atelier Tattoo`;
+
+    const lineID = "@71satelier"; 
+    const lineUrl = `https://line.me/R/oaMessage/${lineID}/?${encodeURIComponent(message)}`;
+    window.open(lineUrl, '_blank');
+}
+</script>
         <!-- 5. CONTACT SECTION -->
-        <section id="page-contact" class="page-section max-w-5xl mx-auto px-4 py-12">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-zinc-100">ช่องทางการติดต่อ</h2>
-                <p class="text-zinc-400 text-sm mt-1">สอบถามราคา ปรึกษาแบบลายสัก หรือขอเส้นทางมาสตูดิโอ</p>
+<section id="page-contact" class="page-section hidden py-12 px-4 max-w-5xl mx-auto w-full">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-extrabold text-zinc-100">ช่องทางการติดต่อ</h2>
+        <p class="text-zinc-400 text-sm mt-1">สอบถามราคา ปรึกษาแบบลายสัก หรือขอเส้นทางมาสตูดิโอ</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- รายการช่องทางติดต่อ -->
+        <div class="space-y-4">
+            
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/people/71s-Atelier-Tattoo/61564376957038/" target="_blank" 
+               class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 hover:border-amber-500/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-500 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="text-xs text-zinc-400 font-medium leading-none mb-1">Facebook Page</span>
+                    <span class="text-zinc-100 font-semibold text-base leading-tight">71's Atelier Tattoo</span>
+                </div>
+            </a>
+
+            <!-- LINE -->
+            <a href="https://line.me/ti/p/gWiYcwguby" target="_blank" 
+               class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 hover:border-amber-500/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.412-.105-.53-.284l-2.03-2.909v2.535c0 .345-.282.63-.63.63-.345 0-.627-.285-.627-.63V8.108c0-.27.174-.51.432-.596.064-.021.132-.031.2-.031.21 0 .41.105.528.285l2.031 2.908V8.108c0-.345.282-.63.63-.63.345 0 .627.285.627.63v4.771zm-5.741 0c0 .345-.282.63-.63.63-.345 0-.627-.285-.627-.63V8.108c0-.345.282-.63.63-.63.345 0 .627.285.627.63v4.771zm-2.43 0c0 .345-.282.63-.627.63H4.326c-.345 0-.627-.285-.627-.63V8.108c0-.345.282-.63.627-.63.345 0 .627.285.627.63v4.141h1.756c.346 0 .627.285.627.63zM24 10.314c0-4.797-4.908-8.698-10.94-8.698C7.027 1.616 2 5.517 2 10.314c0 4.298 3.897 7.893 9.152 8.563.357.077.843.236.966.54.11.272.072.701.036 1.002-.061.503-.277 1.968-.311 2.389-.052.628.288.618.604.409 3.125-2.067 8.463-4.985 8.463-8.601-.001-.101.001-.202 0-.302z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="text-xs text-zinc-400 font-medium leading-none mb-1">LINE Official Account</span>
+                    <span class="text-zinc-100 font-semibold text-base leading-tight">@71satelier</span>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/71s.atelier" target="_blank" 
+               class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 hover:border-amber-500/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="text-xs text-zinc-400 font-medium leading-none mb-1">Instagram</span>
+                    <span class="text-zinc-100 font-semibold text-base leading-tight">@71s.atelier</span>
+                </div>
+            </a>
+
+            <!-- Location -->
+            <div class="flex items-center gap-4 p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="text-xs text-zinc-400 font-medium leading-none mb-1">ที่ตั้งสตูดิโอ</span>
+                    <span class="text-zinc-100 font-semibold text-base leading-tight">คลองหก ปทุมธานี (ใกล้ มทร.ธัญบุรี)</span>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Social Links -->
-                <div class="space-y-4">
-                    <a href="https://www.facebook.com/people/71s-Atelier-Tattoo/61564376957038/" target="_blank" class="flex items-center gap-4 bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl hover:border-amber-500 transition group">
-                        <div class="bg-blue-600/10 border border-blue-500/20 p-3 rounded-xl text-blue-500 group-hover:scale-110 transition">
-                            <i data-lucide="facebook" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-zinc-400">Facebook Page</p>
-                            <p class="font-bold text-zinc-100">71's Atelier Tattoo</p>
-                        </div>
-                    </a>
+        </div>
 
-                    <a href="https://line.me/ti/p/gWiYcwguby" target="_blank" class="flex items-center gap-4 bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl hover:border-amber-500 transition group">
-                        <div class="bg-emerald-600/10 border border-emerald-500/20 p-3 rounded-xl text-emerald-500 group-hover:scale-110 transition">
-                            <i data-lucide="message-circle" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-zinc-400">LINE Official Account</p>
-                            <p class="font-bold text-zinc-100">@71satelier</p>
-                        </div>
-                    </a>
-
-                    <a href="https://www.instagram.com/71s.atelier?igsi=b2pkdmdiaTJhbGI4" target="_blank" class="flex items-center gap-4 bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl hover:border-amber-500 transition group">
-                        <div class="bg-pink-600/10 border border-pink-500/20 p-3 rounded-xl text-pink-500 group-hover:scale-110 transition">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-zinc-400">Instagram</p>
-                            <p class="font-bold text-zinc-100">@71s.atelier</p>
-                        </div>
-                    </a>
-
-                    <div class="flex items-center gap-4 bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl">
-                        <div class="bg-amber-500/10 border border-amber-500/20 p-3 rounded-xl text-amber-500">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <p class="text-xs text-zinc-400">ที่ตั้งสตูดิโอ</p>
-                            <p class="font-bold text-zinc-100">คลองหก ปทุมธานี (ใกล้ มทร.ธัญบุรี)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Google Maps Embed -->
-                <div class="bg-zinc-900/80 border border-zinc-800 p-4 rounded-xl flex flex-col h-full min-h-[280px]">
-                    <div class="mb-3">
-                        <h3 class="font-bold text-zinc-100 text-sm">แผนที่การเดินทาง</h3>
-                        <p class="text-xs text-zinc-400">มทร.ธัญบุรี คลองหก ปทุมธานี</p>
-                    </div>
-                    <div class="flex-1 w-full rounded-lg overflow-hidden border border-zinc-800">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.334710173669!2d100.7258413!3d14.0275816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d84877bc95ab3%3A0xa13ad5db2b535d57!2sRajamangala%20University%20of%20Technology%20Thanyaburi!5e0!3m2!1sen!2sth!4v1710000000000!5m2!1sen!2sth" class="w-full h-full border-0 min-h-[220px]" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
+        <!-- แผนที่ Google Maps -->
+        <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 flex flex-col">
+            <div class="mb-3">
+                <h3 class="text-sm font-semibold text-zinc-200">แผนที่การเดินทาง</h3>
+                <p class="text-xs text-zinc-400">มทร.ธัญบุรี คลองหก ปทุมธานี</p>
             </div>
-        </section>
-
-    </main>
+            <div class="w-full h-64 md:h-full rounded-xl overflow-hidden border border-zinc-800/60 min-h-[220px]">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15485.459461141123!2d100.7208883!3d14.0371457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d830a618e7d21%3A0xb30cfbb949d28db7!2z4Lih4Lir4Liy4LiC4LmJ4Liy4LiB4Liy4Lij4LmA4LiX4LiE4LmC4LiZ4LmC4LiX4Lij4Li04Lih4Liy4LmE4LiX4LiiIOC4hOC4Lil4Lit4LiH4Lir4LiB!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-zinc-950 border-t border-zinc-900 py-6 text-center text-xs text-zinc-500">
@@ -402,3 +925,91 @@
     </script>
 </body>
 </html>
+<!-- Footer / Contact Section (สไตล์ 71's Atelier Tattoo) -->
+<footer id="page-contact" class="bg-zinc-950 text-zinc-300 border-t border-zinc-800/80 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            
+            <!-- คอลัมน์ที่ 1: โลโก้ & รายละเอียดร้าน -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-500 text-zinc-950 font-black flex items-center justify-center text-lg border-2 border-amber-400">71</div>
+                    <span class="font-bold text-lg text-zinc-100 tracking-wide">71's Atelier Tattoo</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                    #PRIVATE TATTOO STUDIO<br>
+                    สตูดิโอสักส่วนตัว บรรยากาศเป็นกันเอง สะอาด ปลอดภัย ออกแบบประณีตตามความต้องการของคุณ
+                </p>
+            </div>
+
+            <!-- คอลัมน์ที่ 2: เมนูลัด (Quick Links) -->
+            <div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-4 border-b border-amber-500/40 pb-1 inline-block">เมนูลัด</h3>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-amber-500 transition duration-200">หน้าแรก</a></li>
+                    <li><a href="#about" class="hover:text-amber-500 transition duration-200">เกี่ยวกับร้าน</a></li>
+                    <li><a href="#services" class="hover:text-amber-500 transition duration-200">บริการ & อัตราค่าบริการ</a></li>
+                    <li><a href="#gallery" class="hover:text-amber-500 transition duration-200">ผลงานสัก</a></li>
+                    <li><a href="#aftercare" class="hover:text-amber-500 transition duration-200">ข้อปฏิบัติก่อนสัก</a></li>
+                </ul>
+            </div>
+
+            <!-- คอลัมน์ที่ 3: ข้อมูลติดต่อ & เวลาทำการ -->
+            <div class="space-y-3">
+                <h3 class="text-sm font-bold text-zinc-100 mb-4 border-b border-amber-500/40 pb-1 inline-block">71's Atelier Studio</h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                    คลองหก ปทุมธานี<br>
+                    (ใกล้ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี)
+                </p>
+                <div class="space-y-1.5 text-xs text-zinc-300 pt-2">
+                    <p class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-amber-500"></i>
+                        <span>เปิดบริการตามคิว นัดหมายล่วงหน้า</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-amber-500"></i>
+                        <span>อ.คลองหลวง จ.ปทุมธานี 12110</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- คอลัมน์ที่ 4: ช่องทางโซเชียลมีเดีย -->
+            <div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-4 border-b border-amber-500/40 pb-1 inline-block">ติดตามผลงาน</h3>
+                <p class="text-xs text-zinc-400 mb-4">สอบถามราคา ปรึกษาแบบสัก หรือนัดคิวผ่านช่องทางออนไลน์</p>
+                
+                <div class="flex flex-wrap gap-3">
+    <!-- Facebook Page -->
+    <a href="https://www.facebook.com/profile.php?id=61564376957038" target="_blank" rel="noopener noreferrer" title="Facebook Page"
+       class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-500/50 hover:bg-zinc-800 transition duration-200">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/71s.atelier" target="_blank" rel="noopener noreferrer" title="Instagram"
+       class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-500/50 hover:bg-zinc-800 transition duration-200">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- LINE Official -->
+    <a href="https://line.me/ti/p/~@71satelier" target="_blank" rel="noopener noreferrer" title="LINE Official"
+       class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-amber-400 hover:border-amber-500/50 hover:bg-zinc-800 transition duration-200">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .348-.281.63-.63.63h-2.425v1.125h2.425c.349 0 .63.283.63.63 0 .348-.281.63-.63.63h-3.055c-.349 0-.63-.283-.63-.63V8.109c0-.348.281-.63.63-.63h3.055c.349 0 .63.282.63.63 0 .348-.281.63-.63.63h-2.425v1.124h2.425zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.412-.105-.53-.285l-2.222-3.212v2.835c0 .348-.282.63-.63.63-.349 0-.63-.282-.63-.63V8.109c0-.27.173-.51.43-.595.064-.022.133-.033.201-.033.21 0 .411.106.528.287l2.223 3.212V8.109c0-.348.282-.63.631-.63.348 0 .63.282.63.63v4.77zm-6.236 0c0 .348-.282.63-.63.63-.349 0-.63-.282-.63-.63V8.109c0-.348.281-.63.63-.63.348 0 .63.282.63.63v4.77zm-2.327 0c0 .348-.282.63-.63.63h-2.425c-.349 0-.63-.282-.63-.63V8.109c0-.348.281-.63.63-.63.348 0 .63.282.63.63v4.14h2.425c.348 0 .63.283.63.63zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08-.085.643-.388 2.513-.423 2.802-.057.472.217.925.689.925.267 0 .506-.153.673-.324 3.731-3.791 7.157-7.397 9.808-10.432C23.111 13.069 24 11.758 24 10.314z"/>
+        </svg>
+    </a>
+</div>
+            </div>
+
+        </div>
+
+        <!-- แท็บ ลิขสิทธิ์ ด้านล่างสุด -->
+        <div class="border-t border-zinc-900 pt-6 text-center text-xs text-zinc-500">
+            <p>© 2026 71's Atelier Tattoo. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
